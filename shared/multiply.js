@@ -6,17 +6,17 @@ const result1 = document.querySelector('#result1');
 if (!!window.SharedWorker) {
     const myWorker = new SharedWorker("worker.js");
 
-    first.onchange = function() {
+    first.onchange = () => {
         myWorker.port.postMessage([first.value, second.value]);
         console.log('Message posted to worker');
     }
 
-    second.onchange = function() {
+    second.onchange = () => {
         myWorker.port.postMessage([first.value, second.value]);
         console.log('Message posted to worker');
     }
 
-    myWorker.port.onmessage = function(e) {
+    myWorker.port.onmessage = (e) => {
         result1.textContent = e.data;
         console.log('Message received from worker');
         console.log(e.lastEventId);
