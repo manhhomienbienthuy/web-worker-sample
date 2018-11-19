@@ -7,17 +7,17 @@ if (!!window.Worker) {
     const myWorker = new Worker("worker.js");
 
     first.onchange = function() {
-      myWorker.postMessage([first.value,second.value]);
-      console.log('Main (first.onchange): Message posted to worker');
+        myWorker.postMessage([first.value,second.value]);
+        console.log('Main (first.onchange): Message posted to worker');
     }
 
     second.onchange = function() {
-      myWorker.postMessage([first.value,second.value]);
-      console.log('Main (second.onchange): Message posted to worker');
+        myWorker.postMessage([first.value,second.value]);
+        console.log('Main (second.onchange): Message posted to worker');
     }
 
     myWorker.onmessage = function(e) {
-    result.textContent = e.data;
-    console.log('Main (myWorker.onmessage): Message received from worker');
+        result.textContent = e.data;
+        console.log('Main (myWorker.onmessage): Message received from worker');
     }
 }
