@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Queryable Worker</title>
+<script src="main.js"></script>
+<button type="button" onclick="myTask.sendQuery('getRandom');">
+    get a random number
+</button>
+<button type="button" onclick="myTask.sendQuery('waitSomeTime');">
+    Wait 1 second
+</button>
+<button type="button" onclick="myTask.terminate();">
+    terminate
+</button>
+<p>Result: <span id="result"></span>
